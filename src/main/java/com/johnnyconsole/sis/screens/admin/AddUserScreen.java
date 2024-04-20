@@ -1,5 +1,6 @@
 package com.johnnyconsole.sis.screens.admin;
 
+import com.johnnyconsole.sis.screens.MainMenuScreen;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
@@ -39,7 +40,20 @@ public class AddUserScreen extends Application {
         GridPane.setHalignment(title, CENTER);
         title.setFont(Font.font(20));
         cbUserType.getItems().addAll("Student", "Instructor", "Administrator");
+        cbUserType.getSelectionModel().select(0);
+        cbUserType.setMaxWidth(Double.MAX_VALUE);
         cbStudentStatus.getItems().addAll("Active", "Suspended");
+        cbStudentStatus.getSelectionModel().select(0);
+        cbStudentStatus.setMaxWidth(Double.MAX_VALUE);
+        addUser.setMaxWidth(Double.MAX_VALUE);
+        cancel.setMaxWidth(Double.MAX_VALUE);
+
+        cancel.setOnAction(__ -> {
+            ps.close();
+            new MainMenuScreen();
+        });
+
+        ps.setOnCloseRequest(__ -> cancel.fire());
 
         pane.add(title, 0, 0, 2, 1);
         pane.addColumn(0, new Label("Username:"), new Label("Last Name:"),
