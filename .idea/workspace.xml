@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5bc64ef-b9d0-4684-b580-c65859e7465a" name="Changes" comment="Add Sign On Screen Basic Layout">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/database/Database.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/session/Session.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/screens/SignOnScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/screens/SignOnScreen.java" afterDir="false" />
-    </list>
+    <list default="true" id="e5bc64ef-b9d0-4684-b580-c65859e7465a" name="Changes" comment="Add basic functionality to sign on screen to check credentials" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,6 +20,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "TechyScientist"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/TechyScientist/SIS",
+    "accountId": "4919f930-893d-43a5-869c-95e22579833f"
+  }
+}]]></component>
   <component name="ProjectColorInfo"><![CDATA[{
   "customColor": "",
   "associatedIndex": 7
@@ -96,7 +102,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1713566925862</updated>
-      <workItem from="1713566926888" duration="1422000" />
+      <workItem from="1713566926888" duration="1711000" />
     </task>
     <task id="LOCAL-00001" summary="Initial IntelliJ Commit">
       <option name="closed" value="true" />
@@ -130,7 +136,31 @@
       <option name="project" value="LOCAL" />
       <updated>1713567425009</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Import Data Source, Add Database class to connect to database">
+      <option name="closed" value="true" />
+      <created>1713568463520</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1713568463520</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Add Session class to hold persistent session information">
+      <option name="closed" value="true" />
+      <created>1713568479255</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1713568479255</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Add basic functionality to sign on screen to check credentials">
+      <option name="closed" value="true" />
+      <created>1713568500020</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1713568500020</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,6 +172,9 @@
     <MESSAGE value="Add Maven dependencies for at.favre.lib:bcrypt and com.mysql.mysql-connector-j" />
     <MESSAGE value="Add starting class" />
     <MESSAGE value="Add Sign On Screen Basic Layout" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Sign On Screen Basic Layout" />
+    <MESSAGE value="Import Data Source, Add Database class to connect to database" />
+    <MESSAGE value="Add Session class to hold persistent session information" />
+    <MESSAGE value="Add basic functionality to sign on screen to check credentials" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add basic functionality to sign on screen to check credentials" />
   </component>
 </project>

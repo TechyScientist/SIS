@@ -70,8 +70,7 @@ public class SignOnScreen extends Application {
         ps.setTitle("SIS - Sign On");
         ps.show();
 
-        if(connection == null)
-            connection = Database.connect();
+        connect();
 
     }
 
@@ -86,7 +85,19 @@ public class SignOnScreen extends Application {
 
             if (rs.next()) {
                 char[] hashBytes = rs.getString("passwordHash").toCharArray();
-                return BCrypt.verifyer().verify(passwordBytes, hashBytes).verified;
+                if(BCrypt.verifyer().verify(passwordBytes, hashBytes).verified) {
+                    username = txtUsername;
+                    last = rs.getString("lastName");
+                    first = rs.getString("firstName");
+                    type = rs.getString("userType");
+                    studentNumber = rs.getInt("studentNumber");
+                    program = rs.getString("studentProgram");
+                    status = rs.getString("studentStatus");
+                    return true;
+                }
+                else {
+                    return false;
+                }
             }
 
         } catch(Exception | AssertionError e) {
