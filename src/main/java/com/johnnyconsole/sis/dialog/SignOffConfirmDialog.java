@@ -9,8 +9,6 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-import static javafx.scene.input.KeyCode.*;
-
 public class SignOffConfirmDialog extends Application {
 
     private final MainMenuScreen caller;
