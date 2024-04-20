@@ -5,7 +5,6 @@ import com.johnnyconsole.sis.panes.CourseManagementPane;
 import com.johnnyconsole.sis.panes.RegistrationManagementPane;
 import com.johnnyconsole.sis.panes.TermManagementPane;
 import com.johnnyconsole.sis.panes.UserManagementPane;
-import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;

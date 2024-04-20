@@ -5,7 +5,6 @@ import com.johnnyconsole.sis.dialog.ErrorDialog;
 import com.johnnyconsole.sis.dialog.SuccessDialog;
 import com.johnnyconsole.sis.screens.MainMenuScreen;
 import com.johnnyconsole.sis.screens.SISScreen;
-import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Scene;
