@@ -2,6 +2,8 @@ package com.johnnyconsole.sis.screens.admin;
 
 import com.johnnyconsole.sis.screens.MainMenuScreen;
 import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Scene;
@@ -47,6 +49,21 @@ public class AddUserScreen extends Application {
         cbStudentStatus.setMaxWidth(Double.MAX_VALUE);
         addUser.setMaxWidth(Double.MAX_VALUE);
         cancel.setMaxWidth(Double.MAX_VALUE);
+
+        cbUserType.getSelectionModel().selectedItemProperty().addListener((__, ___, newValue) -> {
+            if(newValue.equals("Student")) {
+                tfStudentNumber.setDisable(false);
+                tfStudentProgram.setDisable(false);
+                cbStudentStatus.setDisable(false);
+                cbStudentStatus.getSelectionModel().select(0);
+            }
+            else {
+                tfStudentNumber.setDisable(true);
+                tfStudentProgram.setDisable(true);
+                cbStudentStatus.setDisable(true);
+                cbStudentStatus.getSelectionModel().select(0);
+            }
+        });
 
         cancel.setOnAction(__ -> {
             ps.close();
