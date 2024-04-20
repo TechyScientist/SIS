@@ -39,24 +39,24 @@ public class MainMenuScreen extends Application {
         Label title = new Label("Welcome, " + first + "!");
         Button signOff = new Button("Sign Off");
         Tab academicSummary = new Tab("Academic Summary"),
-registration = new Tab("Registration"),
-studentResources = new Tab("Resources"),
-myCourses = new Tab("My Courses"),
-facultyResources = new Tab("Resources"),
-userManagement = new Tab("User Management"),
-termManagement = new Tab("Term Management"),
-courseManagement = new Tab("Course Management"),
-registrationManagement = new Tab("Registration Management"),
-adminResources = new Tab("Resources");
+                registration = new Tab("Registration"),
+                studentResources = new Tab("Resources"),
+                myCourses = new Tab("My Courses"),
+                facultyResources = new Tab("Resources"),
+                userManagement = new Tab("User Management"),
+                termManagement = new Tab("Term Management"),
+                courseManagement = new Tab("Course Management"),
+                registrationManagement = new Tab("Registration Management"),
+                adminResources = new Tab("Resources");
         Tab[] studentTabs = {academicSummary, registration, studentResources},
-facultyTabs = {myCourses, facultyResources},
-adminTabs = {userManagement, termManagement, courseManagement, registrationManagement, adminResources};
+                facultyTabs = {myCourses, facultyResources},
+                adminTabs = {userManagement, termManagement, courseManagement, registrationManagement, adminResources};
         TabPane tabs = new TabPane();
 
-        if(type.equals("Administrator")) {
+        if (type.equals("Administrator")) {
             tabs.getTabs().addAll(adminTabs);
         }
-        else if(type.equals("Instructor")) {
+        else if (type.equals("Instructor")) {
             tabs.getTabs().addAll(facultyTabs);
         }
         else {
@@ -68,13 +68,13 @@ adminTabs = {userManagement, termManagement, courseManagement, registrationManag
         //studentResources.setContent(new StudentResourcesPane();
         //myCourses.setContent(new MyCoursesPane());
         //facultyResources.setContent(new FacultyResourcesPane());
-        userManagement.setContent(new UserManagementPane());
+        userManagement.setContent(new UserManagementPane(this));
         termManagement.setContent(new TermManagementPane());
         courseManagement.setContent(new CourseManagementPane());
         registrationManagement.setContent(new RegistrationManagementPane());
         //adminResources.setContent(new AdministratorResourcesPane());
 
-        for(Tab tab : tabs.getTabs()) {
+        for (Tab tab : tabs.getTabs()) {
             tab.setClosable(false);
         }
 
@@ -87,7 +87,7 @@ adminTabs = {userManagement, termManagement, courseManagement, registrationManag
 
         pane.setOnKeyPressed(key -> {
             if (key.getCode() == ESCAPE)
-signOff.fire();
+                signOff.fire();
         });
 
         pane.add(title, 0, 0);
