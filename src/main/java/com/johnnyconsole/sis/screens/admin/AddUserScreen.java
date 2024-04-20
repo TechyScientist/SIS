@@ -82,8 +82,6 @@ public class AddUserScreen extends SISScreen {
                     cbUserType.getSelectionModel().getSelectedItem(),tfStudentNumber.getText(),
                     tfStudentProgram.getText(), cbStudentStatus.getSelectionModel().getSelectedItem())) {
                 new SuccessDialog(this, "User Added Successfully");
-                ps.close();
-                new MainMenuScreen();
             }
             else {
                 new ErrorDialog(errMsg);
@@ -145,9 +143,16 @@ public class AddUserScreen extends SISScreen {
                     stmt.setString(3, lastName);
                     stmt.setString(4, firstName);
                     stmt.setString(5, userType);
-                    stmt.setInt(6, Integer.parseInt(studentNumber));
-                    stmt.setString(7, program);
-                    stmt.setString(8, status);
+                    if(!userType.equals("Student")) {
+                        stmt.setString(6, null);
+                        stmt.setString(7, null);
+                        stmt.setString(8, null);
+                    }
+                    else {
+                        stmt.setInt(6, Integer.parseInt(studentNumber));
+                        stmt.setString(7, program);
+                        stmt.setString(8, status);
+                    }
                     stmt.execute();
                     return true;
 
