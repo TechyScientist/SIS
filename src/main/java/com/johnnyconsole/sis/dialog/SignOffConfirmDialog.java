@@ -37,7 +37,7 @@ public class SignOffConfirmDialog extends Application {
         yes.setOnAction(__ -> {
             caller.close();
             ps.close();
-            new SignOnScreen();
+            new SignOnScreen().start(new Stage());
         });
 
         no.setOnAction(__ -> {
