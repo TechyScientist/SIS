@@ -20,9 +20,7 @@ import static javafx.geometry.HPos.*;
 import static javafx.scene.input.KeyCode.*;
 import static com.johnnyconsole.sis.session.Session.*;
 
-public class MainMenuScreen extends Application {
-
-    private Stage stage;
+public class MainMenuScreen extends SISScreen {
 
     public MainMenuScreen() {
         start(new Stage());
@@ -30,7 +28,7 @@ public class MainMenuScreen extends Application {
 
     @Override
     public void start(Stage ps) {
-        stage = ps;
+        this.ps = ps;
         GridPane pane = new GridPane();
         pane.setPadding(new Insets(20));
         pane.setHgap(10);
@@ -97,17 +95,5 @@ public class MainMenuScreen extends Application {
         ps.setScene(new Scene(pane));
         ps.setTitle("SIS - Main Menu");
         ps.show();
-    }
-
-    public void show() {
-        stage.show();
-    }
-
-    public void hide() {
-        stage.hide();
-    }
-
-    public void close() {
-        stage.close();
     }
 }
