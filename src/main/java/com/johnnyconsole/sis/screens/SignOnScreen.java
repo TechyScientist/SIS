@@ -1,7 +1,6 @@
 package com.johnnyconsole.sis.screens;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
-import com.johnnyconsole.sis.database.Database;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
