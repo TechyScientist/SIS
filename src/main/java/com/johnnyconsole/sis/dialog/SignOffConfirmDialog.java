@@ -43,9 +43,7 @@ public class SignOffConfirmDialog extends Application {
             caller.show();
         });
 
-        ps.setOnCloseRequest(__ -> {
-            no.fire();
-        });
+        ps.setOnCloseRequest(__ -> no.fire());
 
         pane.addColumn(0, title, yes, no);
 
