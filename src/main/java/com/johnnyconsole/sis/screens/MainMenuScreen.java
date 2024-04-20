@@ -1,6 +1,10 @@
 package com.johnnyconsole.sis.screens;
 
 import com.johnnyconsole.sis.dialog.SignOffConfirmDialog;
+import com.johnnyconsole.sis.panes.CourseManagementPane;
+import com.johnnyconsole.sis.panes.RegistrationManagementPane;
+import com.johnnyconsole.sis.panes.TermManagementPane;
+import com.johnnyconsole.sis.panes.UserManagementPane;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -35,18 +39,18 @@ public class MainMenuScreen extends Application {
         Label title = new Label("Welcome, " + first + "!");
         Button signOff = new Button("Sign Off");
         Tab academicSummary = new Tab("Academic Summary"),
-                registration = new Tab("Registration"),
-                studentResources = new Tab("Resources"),
-                myCourses = new Tab("My Courses"),
-                facultyResources = new Tab("Resources"),
-                userManagement = new Tab("User Management"),
-                termManagement = new Tab("Term Management"),
-                courseManagement = new Tab("Term Management"),
-                registrationManagement = new Tab("Registration Management"),
-                adminResources = new Tab("Resources");
+registration = new Tab("Registration"),
+studentResources = new Tab("Resources"),
+myCourses = new Tab("My Courses"),
+facultyResources = new Tab("Resources"),
+userManagement = new Tab("User Management"),
+termManagement = new Tab("Term Management"),
+courseManagement = new Tab("Course Management"),
+registrationManagement = new Tab("Registration Management"),
+adminResources = new Tab("Resources");
         Tab[] studentTabs = {academicSummary, registration, studentResources},
-                facultyTabs = {myCourses, facultyResources},
-                adminTabs = {userManagement, termManagement, courseManagement, registrationManagement, adminResources};
+facultyTabs = {myCourses, facultyResources},
+adminTabs = {userManagement, termManagement, courseManagement, registrationManagement, adminResources};
         TabPane tabs = new TabPane();
 
         if(type.equals("Administrator")) {
@@ -59,6 +63,21 @@ public class MainMenuScreen extends Application {
             tabs.getTabs().addAll(studentTabs);
         }
 
+        //academicSummary.setContent(new AcademicSummaryPane());
+        //registration.setContent(new RegistrationPane());
+        //studentResources.setContent(new StudentResourcesPane();
+        //myCourses.setContent(new MyCoursesPane());
+        //facultyResources.setContent(new FacultyResourcesPane());
+        userManagement.setContent(new UserManagementPane());
+        termManagement.setContent(new TermManagementPane());
+        courseManagement.setContent(new CourseManagementPane());
+        registrationManagement.setContent(new RegistrationManagementPane());
+        //adminResources.setContent(new AdministratorResourcesPane());
+
+        for(Tab tab : tabs.getTabs()) {
+            tab.setClosable(false);
+        }
+
         title.setFont(Font.font(20));
         GridPane.setHalignment(title, CENTER);
         signOff.setMaxWidth(Double.MAX_VALUE);
@@ -68,7 +87,7 @@ public class MainMenuScreen extends Application {
 
         pane.setOnKeyPressed(key -> {
             if (key.getCode() == ESCAPE)
-                signOff.fire();
+signOff.fire();
         });
 
         pane.add(title, 0, 0);
