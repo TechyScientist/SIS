@@ -72,9 +72,7 @@ public class SignOnScreen extends Application {
         ps.setScene(new Scene(pane));
         ps.setTitle("SIS - Sign On");
         ps.show();
-
         connect();
-
     }
 
     public boolean authenticate(String txtUsername, String txtPassword) {

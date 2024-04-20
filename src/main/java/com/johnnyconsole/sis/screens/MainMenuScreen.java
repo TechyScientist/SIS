@@ -1,5 +1,6 @@
 package com.johnnyconsole.sis.screens;
 
+import com.johnnyconsole.sis.dialog.SignOffConfirmDialog;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -12,9 +13,12 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import static javafx.geometry.HPos.*;
+import static javafx.scene.input.KeyCode.*;
 import static com.johnnyconsole.sis.session.Session.*;
 
 public class MainMenuScreen extends Application {
+
+    private Stage stage;
 
     public MainMenuScreen() {
         start(new Stage());
@@ -22,6 +26,7 @@ public class MainMenuScreen extends Application {
 
     @Override
     public void start(Stage ps) {
+        stage = ps;
         GridPane pane = new GridPane();
         pane.setPadding(new Insets(20));
         pane.setHgap(10);
@@ -57,6 +62,14 @@ public class MainMenuScreen extends Application {
         title.setFont(Font.font(20));
         GridPane.setHalignment(title, CENTER);
         signOff.setMaxWidth(Double.MAX_VALUE);
+        signOff.setOnAction(__ -> new SignOffConfirmDialog(this));
+
+        ps.setOnCloseRequest(__ -> signOff.fire());
+
+        pane.setOnKeyPressed(key -> {
+            if (key.getCode() == ESCAPE)
+                signOff.fire();
+        });
 
         pane.add(title, 0, 0);
         pane.add(tabs, 0, 1);
@@ -65,5 +78,17 @@ public class MainMenuScreen extends Application {
         ps.setScene(new Scene(pane));
         ps.setTitle("SIS - Main Menu");
         ps.show();
+    }
+
+    public void show() {
+        stage.show();
+    }
+
+    public void hide() {
+        stage.hide();
+    }
+
+    public void close() {
+        stage.close();
     }
 }
