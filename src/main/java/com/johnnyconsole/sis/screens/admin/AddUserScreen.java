@@ -1,9 +1,11 @@
 package com.johnnyconsole.sis.screens.admin;
 
+import at.favre.lib.crypto.bcrypt.BCrypt;
+import com.johnnyconsole.sis.dialog.ErrorDialog;
+import com.johnnyconsole.sis.dialog.SuccessDialog;
 import com.johnnyconsole.sis.screens.MainMenuScreen;
+import com.johnnyconsole.sis.screens.SISScreen;
 import javafx.application.Application;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Scene;
@@ -12,15 +14,24 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
-import static javafx.geometry.HPos.*;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
-public class AddUserScreen extends Application {
+import static javafx.geometry.HPos.*;
+import static com.johnnyconsole.sis.session.Session.*;
+
+public class AddUserScreen extends SISScreen {
+
+    private String errMsg;
 
     public AddUserScreen() {
         start(new Stage());
     }
 
-    @Override public void start(Stage ps) {
+    @Override
+    public void start(Stage ps) {
+        this.ps = ps;
         GridPane pane = new GridPane();
         pane.setPadding(new Insets(20));
         pane.setHgap(10);
@@ -65,6 +76,20 @@ public class AddUserScreen extends Application {
             }
         });
 
+        addUser.setOnAction(__ -> {
+            if(addUser(tfUsername.getText(), tfLastName.getText(),
+                    tfFirstName.getText(), pfPassword.getText(), pfConfirm.getText(),
+                    cbUserType.getSelectionModel().getSelectedItem(),tfStudentNumber.getText(),
+                    tfStudentProgram.getText(), cbStudentStatus.getSelectionModel().getSelectedItem())) {
+                new SuccessDialog(this, "User Added Successfully");
+                ps.close();
+                new MainMenuScreen();
+            }
+            else {
+                new ErrorDialog(errMsg);
+            }
+        });
+
         cancel.setOnAction(__ -> {
             ps.close();
             new MainMenuScreen();
@@ -91,4 +116,57 @@ public class AddUserScreen extends Application {
         ps.setTitle("SIS Admin - Add User");
         ps.show();
     }
+
+    private boolean addUser(String username, String lastName, String firstName,
+                            String password, String confirm, String userType,
+                            String studentNumber, String program, String status) {
+        try {
+            if(username.isEmpty() || lastName.isEmpty() || firstName.isEmpty() || password.isEmpty() || confirm.isEmpty() || (userType.equals("Student") && (studentNumber.isEmpty() || program.isEmpty()))) {
+                errMsg = "Empty fields";
+                return false;
+            }
+            assert connection != null;
+            PreparedStatement stmt = connection.prepareStatement("SELECT username FROM users WHERE username=?;");
+                    stmt.setString(1, username.toLowerCase());
+                    ResultSet rs = stmt.executeQuery();
+                    if (rs.next()) {
+                        errMsg = "User already exists";
+                        return false;
+                    }
+                    if(!password.equals(confirm)) {
+                        errMsg = "Passwords do not match";
+                        return false;
+                    }
+                    if(userType.equals("Student") && studentNumber.length() != 9) throw new NumberFormatException();
+
+                    stmt = connection.prepareStatement("INSERT INTO users(username, passwordHash, lastName, firstName, userType, studentNumber, studentProgram, studentStatus) VALUES(?,?,?,?,?,?,?,?);");
+                    stmt.setString(1, username.toLowerCase());
+                    stmt.setString(2, BCrypt.with(BCrypt.Version.VERSION_2Y).hashToString(16, password.toCharArray()));
+                    stmt.setString(3, lastName);
+                    stmt.setString(4, firstName);
+                    stmt.setString(5, userType);
+                    stmt.setInt(6, Integer.parseInt(studentNumber));
+                    stmt.setString(7, program);
+                    stmt.setString(8, status);
+                    stmt.execute();
+                    return true;
+
+        } catch(AssertionError e) {
+            errMsg = "Could not connect to database";
+            return false;
+        }
+        catch(SQLException e) {
+            errMsg = "Database Error";
+            return false;
+        }
+        catch(NumberFormatException e) {
+            errMsg = "Invalid Student Number: Must be a 9-digit number";
+        }
+        catch(Exception e) {
+            errMsg = "Unknown Error: " + e.getMessage();
+            return false;
+        }
+        return false;
+    }
+
 }

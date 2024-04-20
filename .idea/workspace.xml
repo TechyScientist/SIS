@@ -8,7 +8,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5bc64ef-b9d0-4684-b580-c65859e7465a" name="Changes" comment="Add cancel button action listener and close request listener to AddUserScreen">
+    <list default="true" id="e5bc64ef-b9d0-4684-b580-c65859e7465a" name="Changes" comment="Add item change listener to user type box">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/dialog/SuccessDialog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/screens/SISScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/screens/admin/AddUserScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/screens/admin/AddUserScreen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,6 +81,7 @@
       <recent name="com.johnnyconsole.sis.screens.admin" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.johnnyconsole.sis.dialog" />
       <recent name="com.johnnyconsole.sis.panes" />
     </key>
   </component>
@@ -120,7 +124,7 @@
       <workItem from="1713566926888" duration="1711000" />
       <workItem from="1713573172148" duration="1207000" />
       <workItem from="1713574395344" duration="3499000" />
-      <workItem from="1713623562392" duration="1950000" />
+      <workItem from="1713623562392" duration="3620000" />
     </task>
     <task id="LOCAL-00001" summary="Initial IntelliJ Commit">
       <option name="closed" value="true" />
@@ -306,7 +310,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713625296664</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Add item change listener to user type box">
+      <option name="closed" value="true" />
+      <created>1713625747580</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1713625747580</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -336,6 +348,7 @@
     <MESSAGE value="Add tab contents for User Management, Term Management, Course Management and Registration Management" />
     <MESSAGE value="Add and Link AddUserScreen Layout to MainMenuScreen" />
     <MESSAGE value="Add cancel button action listener and close request listener to AddUserScreen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add cancel button action listener and close request listener to AddUserScreen" />
+    <MESSAGE value="Add item change listener to user type box" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add item change listener to user type box" />
   </component>
 </project>
