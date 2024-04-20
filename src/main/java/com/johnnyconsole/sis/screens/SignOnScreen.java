@@ -1,6 +1,7 @@
 package com.johnnyconsole.sis.screens;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
+import com.johnnyconsole.sis.dialog.ErrorDialog;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -14,13 +15,16 @@ import javafx.stage.Stage;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import static javafx.geometry.HPos.*;
 import static javafx.scene.input.KeyCode.*;
 import static com.johnnyconsole.sis.session.Session.*;
 
 public class SignOnScreen extends Application {
-
+    
+    private String errMsg;
+    
     @Override
     public void start(Stage ps) {
         GridPane pane = new GridPane();
@@ -42,10 +46,10 @@ public class SignOnScreen extends Application {
         signOn.setOnAction(__ -> {
             if(authenticate(tfUsername.getText(), tfPassword.getText())) {
                 ps.close();
-                System.out.println("OK");
+                new MainMenuScreen();
             }
             else {
-                System.out.println("Error");
+                new ErrorDialog(errMsg);
             }
         });
 
@@ -75,7 +79,9 @@ public class SignOnScreen extends Application {
 
     public boolean authenticate(String txtUsername, String txtPassword) {
         try {
-            assert connection != null;
+            if (connection == null) throw new NullPointerException();
+            if(txtUsername.isEmpty() || txtPassword.isEmpty()) throw new IllegalArgumentException();
+
             char[] passwordBytes = txtPassword.toCharArray();
 
             PreparedStatement stmt = connection.prepareStatement("SELECT * FROM users WHERE username=?;");
@@ -95,13 +101,28 @@ public class SignOnScreen extends Application {
                     return true;
                 }
                 else {
+                    errMsg = "Invalid Credentials";
                     return false;
                 }
             }
+            else {
+                errMsg = "Invalid Credentials";
+                return false;
+            }
 
-        } catch(Exception | AssertionError e) {
+        } catch(SQLException e) {
+            errMsg = "Database Error";
+            return false;
+        } catch (NullPointerException e) {
+            errMsg = "Could not connect to database";
             return false;
         }
-        return false;
+        catch(IllegalArgumentException e) {
+           errMsg = "Missing Username or Password";
+           return false;
+        } catch(Exception e) {
+            errMsg = "Unknown Error: " + e.getMessage();
+            return false;
+        }
     }
 }
