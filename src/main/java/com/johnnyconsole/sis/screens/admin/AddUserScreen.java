@@ -54,7 +54,7 @@ public class AddUserScreen extends SISScreen {
         cbUserType.getItems().addAll("Student", "Instructor", "Administrator");
         cbUserType.getSelectionModel().select(0);
         cbUserType.setMaxWidth(Double.MAX_VALUE);
-        cbStudentStatus.getItems().addAll("Active", "Suspended");
+        cbStudentStatus.getItems().addAll("Active", "Suspended", "Program Complete");
         cbStudentStatus.getSelectionModel().select(0);
         cbStudentStatus.setMaxWidth(Double.MAX_VALUE);
         addUser.setMaxWidth(Double.MAX_VALUE);

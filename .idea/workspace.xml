@@ -8,7 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5bc64ef-b9d0-4684-b580-c65859e7465a" name="Changes" comment="Abstract AddUserScreen to SISScreen, add functionality" />
+    <list default="true" id="e5bc64ef-b9d0-4684-b580-c65859e7465a" name="Changes" comment="Organize Imports" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,7 +51,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.Launch.executor": "Debug",
+    "Application.Launch.executor": "Run",
     "Application.SignOnScreen.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -119,7 +119,7 @@
       <workItem from="1713566926888" duration="1711000" />
       <workItem from="1713573172148" duration="1207000" />
       <workItem from="1713574395344" duration="3499000" />
-      <workItem from="1713623562392" duration="3959000" />
+      <workItem from="1713623562392" duration="4392000" />
     </task>
     <task id="LOCAL-00001" summary="Initial IntelliJ Commit">
       <option name="closed" value="true" />
@@ -353,7 +353,31 @@
       <option name="project" value="LOCAL" />
       <updated>1713627426792</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Fix user adding functionality when not adding student user">
+      <option name="closed" value="true" />
+      <created>1713627786982</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1713627786982</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Fix SignOffConfirmDialog not showing SignOnScreen">
+      <option name="closed" value="true" />
+      <created>1713627855780</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1713627855780</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Organize Imports">
+      <option name="closed" value="true" />
+      <created>1713627950401</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1713627950401</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -363,9 +387,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add Maven dependencies for at.favre.lib:bcrypt and com.mysql.mysql-connector-j" />
-    <MESSAGE value="Add starting class" />
-    <MESSAGE value="Add Sign On Screen Basic Layout" />
     <MESSAGE value="Import Data Source, Add Database class to connect to database" />
     <MESSAGE value="Add Session class to hold persistent session information" />
     <MESSAGE value="Add basic functionality to sign on screen to check credentials" />
@@ -388,22 +409,9 @@
     <MESSAGE value="Create SISScreen abstraction" />
     <MESSAGE value="Abstract MainMenuScreen to SISScreen" />
     <MESSAGE value="Abstract AddUserScreen to SISScreen, add functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Abstract AddUserScreen to SISScreen, add functionality" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/screens/admin/AddUserScreen.java</url>
-          <line>89</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/screens/admin/AddUserScreen.java</url>
-          <line>139</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Fix user adding functionality when not adding student user" />
+    <MESSAGE value="Fix SignOffConfirmDialog not showing SignOnScreen" />
+    <MESSAGE value="Organize Imports" />
+    <option name="LAST_COMMIT_MESSAGE" value="Organize Imports" />
   </component>
 </project>
