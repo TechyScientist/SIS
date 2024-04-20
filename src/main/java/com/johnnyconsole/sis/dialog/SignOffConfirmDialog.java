@@ -1,6 +1,7 @@
 package com.johnnyconsole.sis.dialog;
 
 import com.johnnyconsole.sis.screens.MainMenuScreen;
+import com.johnnyconsole.sis.screens.SignOnScreen;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -36,6 +37,7 @@ public class SignOffConfirmDialog extends Application {
         yes.setOnAction(__ -> {
             caller.close();
             ps.close();
+            new SignOnScreen();
         });
 
         no.setOnAction(__ -> {
@@ -48,7 +50,7 @@ public class SignOffConfirmDialog extends Application {
         pane.addColumn(0, title, yes, no);
 
         ps.setScene(new Scene(pane));
-        ps.setTitle("Error");
+        ps.setTitle("Confirm Sign Off");
         ps.show();
 
     }
