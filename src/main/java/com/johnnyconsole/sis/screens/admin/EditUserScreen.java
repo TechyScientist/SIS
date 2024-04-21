@@ -85,6 +85,7 @@ public class EditUserScreen extends SISScreen {
                     pfConfirm.setDisable(false);
 
                 }
+                return;
             }
             if(editUser(tfUsername.getText(), tfLastName.getText(), tfFirstName.getText(),
                     pfPassword.getText(), pfConfirm.getText(), tfStudentProgram.getText(),
@@ -195,16 +196,34 @@ public class EditUserScreen extends SISScreen {
     private boolean editUser(String username, String lastName, String firstName,
                             String password, String confirm, String program, String status) {
         try {
-            if(username.isEmpty() || lastName.isEmpty() || firstName.isEmpty() || password.isEmpty() || confirm.isEmpty()) {
+            if(username.isEmpty() || lastName.isEmpty() || firstName.isEmpty() || (!password.isEmpty() && confirm.isEmpty())) {
                 errMsg = "Empty fields";
                 return false;
             }
             assert connection != null;
 
-            if(username.equals("except")) throw new SQLException(); //TODO: Remove this line
+            String sql = "UPDATE users SET lastName=?, firstName=?, studentProgram=?, studentStatus=?";
 
-            //TODO: Create and execute database query
+            if(!password.isEmpty() && !password.equals(confirm)) {
+                errMsg = "Passwords don't match";
+                return false;
+            }
+            else if(!password.isEmpty()) {
+                sql += ", passwordHash=?";
+            }
+            sql += " WHERE username=?;";
 
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setString(1, lastName);
+            stmt.setString(2, firstName);
+            stmt.setString(3, program);
+            stmt.setString(4, status);
+            if(!password.isEmpty()) {
+                stmt.setString(5, BCrypt.with(BCrypt.Version.VERSION_2Y).hashToString(16, password.toCharArray()));
+            }
+            stmt.setString((!password.isEmpty() ? 6 : 5), username.toLowerCase());
+
+            stmt.execute();
             return true;
 
         } catch(AssertionError e) {
@@ -215,14 +234,10 @@ public class EditUserScreen extends SISScreen {
             errMsg = "Database Error";
             return false;
         }
-        catch(NumberFormatException e) {
-            errMsg = "Invalid Student Number: Must be a 9-digit number";
-        }
         catch(Exception e) {
             errMsg = "Unknown Error: " + e.getMessage();
             return false;
         }
-        return false;
     }
 
 }
