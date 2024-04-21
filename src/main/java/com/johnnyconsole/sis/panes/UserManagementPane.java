@@ -2,6 +2,7 @@ package com.johnnyconsole.sis.panes;
 
 import com.johnnyconsole.sis.screens.MainMenuScreen;
 import com.johnnyconsole.sis.screens.admin.AddUserScreen;
+import com.johnnyconsole.sis.screens.admin.EditUserScreen;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -30,6 +31,11 @@ public class UserManagementPane extends GridPane {
         add.setOnAction(__ -> {
             menuScreen.close();
             new AddUserScreen();
+        });
+
+        edit.setOnAction(__ -> {
+            menuScreen.close();
+            new EditUserScreen();
         });
 
         addColumn(0, title, add, edit, remove, view);

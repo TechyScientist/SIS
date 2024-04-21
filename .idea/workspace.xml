@@ -8,7 +8,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5bc64ef-b9d0-4684-b580-c65859e7465a" name="Changes" comment="Organize Imports" />
+    <list default="true" id="e5bc64ef-b9d0-4684-b580-c65859e7465a" name="Changes" comment="Add Program Complete status option for students">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/screens/admin/EditUserScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/panes/UserManagementPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/panes/UserManagementPane.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,34 +52,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.Launch.executor": "Run",
-    "Application.SignOnScreen.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.Launch.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SignOnScreen.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mariadb"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mariadb&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.johnnyconsole.sis.screens.admin" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.johnnyconsole.sis.screens.admin" />
       <recent name="com.johnnyconsole.sis.dialog" />
       <recent name="com.johnnyconsole.sis.panes" />
     </key>
@@ -119,7 +124,8 @@
       <workItem from="1713566926888" duration="1711000" />
       <workItem from="1713573172148" duration="1207000" />
       <workItem from="1713574395344" duration="3499000" />
-      <workItem from="1713623562392" duration="4392000" />
+      <workItem from="1713623562392" duration="4706000" />
+      <workItem from="1713711744650" duration="2075000" />
     </task>
     <task id="LOCAL-00001" summary="Initial IntelliJ Commit">
       <option name="closed" value="true" />
@@ -377,7 +383,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713627950401</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Add Program Complete status option for students">
+      <option name="closed" value="true" />
+      <created>1713628065104</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1713628065104</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -387,7 +401,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Import Data Source, Add Database class to connect to database" />
     <MESSAGE value="Add Session class to hold persistent session information" />
     <MESSAGE value="Add basic functionality to sign on screen to check credentials" />
     <MESSAGE value="Abstract database connection to Session method connect, add additional variables" />
@@ -412,6 +425,7 @@
     <MESSAGE value="Fix user adding functionality when not adding student user" />
     <MESSAGE value="Fix SignOffConfirmDialog not showing SignOnScreen" />
     <MESSAGE value="Organize Imports" />
-    <option name="LAST_COMMIT_MESSAGE" value="Organize Imports" />
+    <MESSAGE value="Add Program Complete status option for students" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Program Complete status option for students" />
   </component>
 </project>
