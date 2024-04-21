@@ -8,8 +8,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5bc64ef-b9d0-4684-b580-c65859e7465a" name="Changes" comment="Add EditUserScreen database query to apply changes">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/screens/admin/ViewUserScreen.java" afterDir="false" />
+    <list default="true" id="e5bc64ef-b9d0-4684-b580-c65859e7465a" name="Changes" comment="Add ViewUserScreen to UserManagementPane">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/dialog/SignOffConfirmDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/dialog/SignOffConfirmDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/dialog/SuccessDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/dialog/SuccessDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/panes/CourseManagementPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/pane/admin/user/CourseManagementPane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/panes/RegistrationManagementPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/pane/admin/user/RegistrationManagementPane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/panes/TermManagementPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/pane/admin/user/TermManagementPane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/panes/UserManagementPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/pane/admin/user/UserManagementPane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/screens/MainMenuScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/screen/MainMenuScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/screens/SISScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/screen/SISScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/screens/SignOnScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/screen/SignOnScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/screens/admin/AddUserScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/screen/admin/user/AddUserScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/screens/admin/EditUserScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/screen/admin/user/EditUserScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/screens/admin/ViewUserScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/screen/admin/user/ViewUserScreen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,11 +96,11 @@
   </component>
   <component name="RunManager">
     <configuration name="Launch" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.johnnyconsole.sis.screens.SignOnScreen" />
+      <option name="MAIN_CLASS_NAME" value="com.johnnyconsole.sis.screen.SignOnScreen" />
       <module name="SIS" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.johnnyconsole.sis.screens.*" />
+          <option name="PATTERN" value="com.johnnyconsole.sis.screen.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -123,7 +134,7 @@
       <workItem from="1713573172148" duration="1207000" />
       <workItem from="1713574395344" duration="3499000" />
       <workItem from="1713623562392" duration="4706000" />
-      <workItem from="1713711744650" duration="3819000" />
+      <workItem from="1713711744650" duration="4150000" />
     </task>
     <task id="LOCAL-00001" summary="Initial IntelliJ Commit">
       <option name="closed" value="true" />
@@ -405,7 +416,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713714820318</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Add ViewUserScreen to UserManagementPane">
+      <option name="closed" value="true" />
+      <created>1713715810163</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1713715810163</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -415,7 +434,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Abstract database connection to Session method connect, add additional variables" />
     <MESSAGE value="Add ErrorDialog class for presenting error messages" />
     <MESSAGE value="Add and link MainMenuScreen to SignOnScreen on successful sign on" />
     <MESSAGE value="Add confirmation dialogs when signing off" />
@@ -440,6 +458,7 @@
     <MESSAGE value="Add Program Complete status option for students" />
     <MESSAGE value="Add EditUserScreen to UserManagementPane" />
     <MESSAGE value="Add EditUserScreen database query to apply changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add EditUserScreen database query to apply changes" />
+    <MESSAGE value="Add ViewUserScreen to UserManagementPane" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add ViewUserScreen to UserManagementPane" />
   </component>
 </project>
