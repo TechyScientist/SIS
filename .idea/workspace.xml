@@ -8,9 +8,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5bc64ef-b9d0-4684-b580-c65859e7465a" name="Changes" comment="Add EditUserScreen to UserManagementPane">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/screens/admin/EditUserScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/screens/admin/EditUserScreen.java" afterDir="false" />
+    <list default="true" id="e5bc64ef-b9d0-4684-b580-c65859e7465a" name="Changes" comment="Add EditUserScreen database query to apply changes">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/johnnyconsole/sis/screens/admin/ViewUserScreen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +123,7 @@
       <workItem from="1713573172148" duration="1207000" />
       <workItem from="1713574395344" duration="3499000" />
       <workItem from="1713623562392" duration="4706000" />
-      <workItem from="1713711744650" duration="2833000" />
+      <workItem from="1713711744650" duration="3819000" />
     </task>
     <task id="LOCAL-00001" summary="Initial IntelliJ Commit">
       <option name="closed" value="true" />
@@ -398,7 +397,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713713839045</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Add EditUserScreen database query to apply changes">
+      <option name="closed" value="true" />
+      <created>1713714820318</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1713714820318</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -408,7 +415,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add basic functionality to sign on screen to check credentials" />
     <MESSAGE value="Abstract database connection to Session method connect, add additional variables" />
     <MESSAGE value="Add ErrorDialog class for presenting error messages" />
     <MESSAGE value="Add and link MainMenuScreen to SignOnScreen on successful sign on" />
@@ -433,6 +439,7 @@
     <MESSAGE value="Organize Imports" />
     <MESSAGE value="Add Program Complete status option for students" />
     <MESSAGE value="Add EditUserScreen to UserManagementPane" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add EditUserScreen to UserManagementPane" />
+    <MESSAGE value="Add EditUserScreen database query to apply changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add EditUserScreen database query to apply changes" />
   </component>
 </project>
