@@ -1,4 +1,4 @@
-package com.johnnyconsole.sis.panes;
+package com.johnnyconsole.sis.pane.admin.user;
 
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;

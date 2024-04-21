@@ -1,9 +1,9 @@
-package com.johnnyconsole.sis.panes;
+package com.johnnyconsole.sis.pane.admin.user;
 
-import com.johnnyconsole.sis.screens.MainMenuScreen;
-import com.johnnyconsole.sis.screens.admin.AddUserScreen;
-import com.johnnyconsole.sis.screens.admin.EditUserScreen;
-import com.johnnyconsole.sis.screens.admin.ViewUserScreen;
+import com.johnnyconsole.sis.screen.MainMenuScreen;
+import com.johnnyconsole.sis.screen.admin.user.AddUserScreen;
+import com.johnnyconsole.sis.screen.admin.user.EditUserScreen;
+import com.johnnyconsole.sis.screen.admin.user.ViewUserScreen;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;

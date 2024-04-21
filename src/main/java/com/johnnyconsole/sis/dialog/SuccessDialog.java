@@ -1,7 +1,7 @@
 package com.johnnyconsole.sis.dialog;
 
-import com.johnnyconsole.sis.screens.MainMenuScreen;
-import com.johnnyconsole.sis.screens.SISScreen;
+import com.johnnyconsole.sis.screen.MainMenuScreen;
+import com.johnnyconsole.sis.screen.SISScreen;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;

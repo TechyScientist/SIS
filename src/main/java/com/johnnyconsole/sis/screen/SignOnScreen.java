@@ -1,4 +1,4 @@
-package com.johnnyconsole.sis.screens;
+package com.johnnyconsole.sis.screen;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
 import com.johnnyconsole.sis.dialog.ErrorDialog;

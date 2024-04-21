@@ -1,10 +1,10 @@
-package com.johnnyconsole.sis.screens.admin;
+package com.johnnyconsole.sis.screen.admin.user;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
 import com.johnnyconsole.sis.dialog.ErrorDialog;
 import com.johnnyconsole.sis.dialog.SuccessDialog;
-import com.johnnyconsole.sis.screens.MainMenuScreen;
-import com.johnnyconsole.sis.screens.SISScreen;
+import com.johnnyconsole.sis.screen.MainMenuScreen;
+import com.johnnyconsole.sis.screen.SISScreen;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Scene;

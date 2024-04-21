@@ -1,10 +1,10 @@
-package com.johnnyconsole.sis.screens;
+package com.johnnyconsole.sis.screen;
 
 import com.johnnyconsole.sis.dialog.SignOffConfirmDialog;
-import com.johnnyconsole.sis.panes.CourseManagementPane;
-import com.johnnyconsole.sis.panes.RegistrationManagementPane;
-import com.johnnyconsole.sis.panes.TermManagementPane;
-import com.johnnyconsole.sis.panes.UserManagementPane;
+import com.johnnyconsole.sis.pane.admin.user.CourseManagementPane;
+import com.johnnyconsole.sis.pane.admin.user.RegistrationManagementPane;
+import com.johnnyconsole.sis.pane.admin.user.TermManagementPane;
+import com.johnnyconsole.sis.pane.admin.user.UserManagementPane;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;

@@ -1,4 +1,4 @@
-package com.johnnyconsole.sis.screens;
+package com.johnnyconsole.sis.screen;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
